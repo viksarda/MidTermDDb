@@ -1,0 +1,17 @@
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE FUNCTION dbo.EX5(
+    @date char(8)
+)
+RETURNS INT
+AS
+BEGIN
+
+RETURN datediff(day, dateadd(day, 1-day(@date), @date),  dateadd(month, 1, dateadd(day, 1-day(@date), @date)))
+
+END
+GO

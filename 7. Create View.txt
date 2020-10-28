@@ -1,0 +1,10 @@
+SELECT * FROM RouteStop
+		R.StopId
+FROM	dbo.RouteStop AS R
+		INNER JOIN
+		dbo.[Route] AS So 
+			ON So.RouteID = R.id
+
+GROUP BY 
+		R.StopId,
+		So.RouteID,
